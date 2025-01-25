@@ -41,7 +41,7 @@ const AboutUs = () => {
     <>
       <Header />
       {/* Hero Section */}
-      <section className="bg-white px-10 py-16">
+      <section className="bg-white px-20 py-16">
         <div className="container mx-auto text-center">
           {/* Hero Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-black">
@@ -63,7 +63,7 @@ const AboutUs = () => {
           </div>
 
           {/* Content Section */}
-          <div className="flex flex-wrap justify-between items-end gap-6 mt-12">
+          <div className="flex flex-wrap justify-between items-end gap-6 ">
             {/* First Column (2 Divs) */}
             <div className="flex flex-col gap-6 flex-1 min-w-[200px]">
               {/* Sub-Div 1 */}
@@ -200,7 +200,7 @@ const AboutUs = () => {
                 .map((_, index) => (
                   <div
                     key={index}
-                    className="bg-gray-50 p-4 rounded-lg shadow-lg text-center h-auto flex flex-col justify-center items-center"
+                    className="group p-4 rounded-lg text-center h-auto flex flex-col justify-center items-center transition duration-300"
                   >
                     <img
                       src="/images/hero1.avif"
@@ -214,6 +214,14 @@ const AboutUs = () => {
                       Lorem ipsum odor amet, consectetur adipiscing elit. Platea
                       mollis elementum risus placerat; felis egestas.
                     </p>
+                    {/* Hover Styles */}
+                    <style jsx>{`
+                      .group:hover {
+                        background-color: #f8f9fa;
+                        border-left: 4px solid #dc2626;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                      }
+                    `}</style>
                   </div>
                 ))}
             </div>
@@ -287,9 +295,9 @@ const AboutUs = () => {
             {/* Card 1 */}
             <div className="flex flex-col-reverse items-center text-center">
               <img
-                src="/images/hero2.avif"
+                src="/images/diff1.png"
                 alt="Build & Support Schools"
-                className="w-12 h-12 sm:w-16 sm:h-16 mb-4"
+                className="w-20 h-20 sm:w-24 sm:h-24 mb-4"
               />
               <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold">
                 Build & Support Schools
@@ -302,11 +310,11 @@ const AboutUs = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="flex  flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center">
               <img
-                src="/images/hero2.avif"
+                src="/images/diff2.png"
                 alt="Scholarships and Programs"
-                className="w-12 h-12 sm:w-16 sm:h-16 mb-4"
+                className="w-20 h-20 sm:w-24 sm:h-24 mb-4"
               />
               <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold">
                 Scholarships and Programs
@@ -321,9 +329,9 @@ const AboutUs = () => {
             {/* Card 3 */}
             <div className="flex flex-col-reverse items-center text-center">
               <img
-                src="/images/hero2.avif"
+                src="/images/diff3.png"
                 alt="Provide Essential Resources"
-                className="w-12 h-12 sm:w-16 sm:h-16 mb-4"
+                className="w-20 h-20 sm:w-24 sm:h-24 mb-4"
               />
               <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold">
                 Provide Essential Resources
@@ -379,7 +387,7 @@ const AboutUs = () => {
 
           {/* Center Green Section */}
           <div className="absolute inset-0 flex items-center justify-center z-50 px-4">
-            <div className="bg-green-600 text-white py-6 px-6 sm:px-10 rounded-full opacity-90 text-center">
+            <div className="bg-green-600 text-white py-6 px-6 sm:px-10 rounded-[40px] opacity-90 text-center">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold">
                 Your donation means a lot to them
               </h2>

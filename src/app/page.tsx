@@ -211,9 +211,9 @@ export default function Home() {
 
       <section className="bg-white py-12 px-6 md:px-16">
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 group relative">
             {/* First Row - Single Full Image */}
-            <div className="relative h-40 md:h-56">
+            <div className="relative h-40 md:h-56 group-hover:bg-gray-100 group-hover:shadow-lg group-hover:border-l-4 group-hover:border-red-600 transition-all duration-300">
               <Image
                 src="/images/hero1.avif"
                 alt="Child smiling"
@@ -225,7 +225,7 @@ export default function Home() {
 
             {/* Second Row - Two Images  */}
             <div className="flex gap-4">
-              <div className="relative flex-1 h-40 md:h-56">
+              <div className="relative flex-1 h-40 md:h-56 group-hover:bg-gray-100 group-hover:shadow-lg group-hover:border-l-4 group-hover:border-red-600 transition-all duration-300">
                 <Image
                   src="/images/hero2.avif"
                   alt="Children in a field"
@@ -234,7 +234,7 @@ export default function Home() {
                   className="rounded-lg"
                 />
               </div>
-              <div className="relative flex-1 h-40 md:h-56">
+              <div className="relative flex-1 h-40 md:h-56 group-hover:bg-gray-100 group-hover:shadow-lg group-hover:border-l-4 group-hover:border-red-600 transition-all duration-300">
                 <Image
                   src="/images/hero3.avif"
                   alt="Helping hands"
@@ -246,7 +246,7 @@ export default function Home() {
             </div>
 
             {/* Third Row - Single Full Image */}
-            <div className="relative h-40 md:h-56">
+            <div className="relative h-40 md:h-56 group-hover:bg-gray-100 group-hover:shadow-lg group-hover:border-l-4 group-hover:border-red-600 transition-all duration-300">
               <Image
                 src="/images/hero3.avif"
                 alt="Smiling group of children"
