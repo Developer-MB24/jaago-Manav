@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -7,14 +8,15 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-white shadow px-4 py-4">
+    <header className="bg-gradient-to-r from-yellow-100 to-green-100 shadow px-4 py-4">
       <div className="container mx-auto flex items-center justify-between md:px-4">
         {/* Logo Section */}
         <div className="flex flex-col items-center md:items-start">
-          <h1 className="text-red-600 text-2xl font-bold flex items-center">
+          {/* <h1 className="text-red-600 text-2xl font-bold flex items-center">
             Jaago <span className="mx-1 text-black">&#x1F464;</span> Manav
-          </h1>
-          <p className="text-sm text-black italic">Awakening Humanity.....</p>
+          </h1> */}
+          <img src="/about/logo.png" alt="" />
+          {/* <p className="text-sm text-black italic">Awakening Humanity.....</p> */}
         </div>
 
         {/* Navigation Menu for Larger Screens */}
@@ -66,7 +68,7 @@ const Header = () => {
         <div>
           <Link
             href="/donate"
-            className="px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700"
+            className="px-4 py-2 bg-red-600 text-white font-semibold rounded-3xl hover:bg-red-700"
           >
             Donate
           </Link>

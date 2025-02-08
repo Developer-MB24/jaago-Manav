@@ -82,7 +82,7 @@ const Footer = () => {
               charitable giving tips, stories of impact, grant opportunities and
               more!
             </p>
-            <button className="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700">
+            <button className="mt-4 px-4 py-2 bg-[#035100] text-white font-semibold rounded hover:bg-green-700">
               Sign Up
             </button>
             <h2 className="font-medium mt-3 text-sm">Connect with Us</h2>
@@ -97,7 +97,7 @@ const Footer = () => {
       </footer>
 
       {/* Bottom Section */}
-      <div className="bg-green-800 text-white text-xs sm:text-sm py-4 px-6 sm:px-10">
+      <div className="bg-[#035100] text-white text-xs sm:text-sm py-4 px-6 sm:px-10">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
           <p className="text-center sm:text-left">
             &copy; Copyright 2025 The Dayton Foundation. All rights reserved.
