@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const focusAreas = [
   {
-    icon: "🎓",
+    iconImage: "/home/Education.png",
     title: "Education",
     subtitle: "Education. Success. Future",
     description:
@@ -10,7 +10,7 @@ const focusAreas = [
     buttonText: "READ MORE",
   },
   {
-    icon: "🏥",
+    iconImage: "/home/healthcare.png",
     title: "Healthcare",
     subtitle: "Healthy Lives",
     description:
@@ -18,59 +18,59 @@ const focusAreas = [
     buttonText: "READ MORE",
   },
   {
-    icon: "🌱",
-    title: "Agriculture",
-    subtitle: "Sustainable Farming",
+    iconImage: "/home/Education.png",
+    title: "Education",
+    subtitle: "Education. Success. Future",
     description:
-      "We promote sustainable farming techniques and empower farmers with the knowledge and tools they need.",
+      "Education is the foundation of a better future. We empower children by providing quality education to break the cycle of poverty.",
     buttonText: "READ MORE",
   },
   {
-    icon: "💼",
-    title: "Entrepreneurship",
-    subtitle: "Building Futures",
+    iconImage: "/home/healthcare.png",
+    title: "Healthcare",
+    subtitle: "Healthy Lives",
     description:
-      "Helping individuals start businesses through mentorship and financial support, fostering economic independence.",
+      "Ensuring healthcare access for underprivileged communities. Our goal is to make healthcare a fundamental right for all.",
     buttonText: "READ MORE",
   },
   {
-    icon: "🌍",
-    title: "Environment",
-    subtitle: "Green Future",
+    iconImage: "/home/Education.png",
+    title: "Education",
+    subtitle: "Education. Success. Future",
     description:
-      "Creating awareness and taking action for a sustainable environment and a greener tomorrow.",
+      "Education is the foundation of a better future. We empower children by providing quality education to break the cycle of poverty.",
     buttonText: "READ MORE",
   },
   {
-    icon: "🤝",
-    title: "Community Development",
-    subtitle: "Stronger Together",
+    iconImage: "/home/healthcare.png",
+    title: "Healthcare",
+    subtitle: "Healthy Lives",
     description:
-      "Holistic development through infrastructure, education, and healthcare to uplift communities.",
+      "Ensuring healthcare access for underprivileged communities. Our goal is to make healthcare a fundamental right for all.",
     buttonText: "READ MORE",
   },
   {
-    icon: "📚",
-    title: "Literacy Programs",
-    subtitle: "Knowledge for All",
+    iconImage: "/home/Education.png",
+    title: "Education",
+    subtitle: "Education. Success. Future",
     description:
-      "Eliminating illiteracy by providing education opportunities for all age groups.",
+      "Education is the foundation of a better future. We empower children by providing quality education to break the cycle of poverty.",
     buttonText: "READ MORE",
   },
   {
-    icon: "💡",
-    title: "Innovation",
-    subtitle: "Future Forward",
+    iconImage: "/home/healthcare.png",
+    title: "Healthcare",
+    subtitle: "Healthy Lives",
     description:
-      "Encouraging creative and technological innovations to solve community challenges.",
+      "Ensuring healthcare access for underprivileged communities. Our goal is to make healthcare a fundamental right for all.",
     buttonText: "READ MORE",
   },
   {
-    icon: "🏡",
-    title: "Affordable Housing",
-    subtitle: "Homes for All",
+    iconImage: "/home/healthcare.png",
+    title: "Healthcare",
+    subtitle: "Healthy Lives",
     description:
-      "Building affordable housing projects to provide safe and secure living conditions.",
+      "Ensuring healthcare access for underprivileged communities. Our goal is to make healthcare a fundamental right for all.",
     buttonText: "READ MORE",
   },
 ];
@@ -106,7 +106,13 @@ const FocusAreas = () => {
                 key={index}
                 className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
               >
-                <div className="text-4xl mb-2">{area.icon}</div>
+                <div className="mb-2 flex ">
+                  <img
+                    src={area.iconImage}
+                    alt={area.title}
+                    className="w-16 h-16"
+                  />
+                </div>
                 <h3 className="text-xl font-bold italic mb-1">{area.title}</h3>
                 <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
                 <p className="text-gray-700 mb-4">{area.description}</p>
@@ -124,7 +130,13 @@ const FocusAreas = () => {
                 key={index}
                 className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
               >
-                <div className="text-4xl mb-2">{area.icon}</div>
+                <div className="mb-2 flex justify-center">
+                  <img
+                    src={area.iconImage}
+                    alt={area.title}
+                    className="w-16 h-16"
+                  />
+                </div>
                 <h3 className="text-xl font-bold italic mb-1">{area.title}</h3>
                 <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
                 <p className="text-gray-700 mb-4">{area.description}</p>
@@ -142,7 +154,13 @@ const FocusAreas = () => {
                 key={index}
                 className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
               >
-                <div className="text-4xl mb-2">{area.icon}</div>
+                <div className="mb-2 flex justify-center">
+                  <img
+                    src={area.iconImage}
+                    alt={area.title}
+                    className="w-16 h-16"
+                  />
+                </div>
                 <h3 className="text-xl font-bold italic mb-1">{area.title}</h3>
                 <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
                 <p className="text-gray-700 mb-4">{area.description}</p>
@@ -166,22 +184,6 @@ const FocusAreas = () => {
             ></span>
           ))}
         </div>
-
-        {/* Navigation Buttons (Commented Out) */}
-        {/*
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-600 text-white px-4 py-2 rounded-full hover:bg-gray-800"
-        >
-          ❮
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-600 text-white px-4 py-2 rounded-full hover:bg-gray-800"
-        >
-          ❯
-        </button>
-        */}
       </div>
     </div>
   );

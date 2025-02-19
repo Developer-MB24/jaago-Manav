@@ -119,28 +119,28 @@ const Hero = () => {
 
         <div className=" mt-8 flex justify-evenly items-center text-black ">
           <Image
-            src="/images/unicef.png"
+            src="/home/unicef.png"
             alt="UNICEF"
             width={150}
             height={50}
             className="object-contain"
           />
           <Image
-            src="/images/wfp.png"
+            src="/home/wfp.png"
             alt="World Food Program"
             width={150}
             height={50}
             className="object-contain"
           />
           <Image
-            src="/images/save-the-children-logo.svg"
+            src="/home/savechild.png"
             alt="Save the Children"
             width={150}
             height={50}
             className="object-contain"
           />
           <Image
-            src="/images/mercyCorps.png"
+            src="/home/mercy.png"
             alt="Mercy Corps"
             width={150}
             height={50}

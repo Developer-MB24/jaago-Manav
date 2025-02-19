@@ -21,7 +21,7 @@ const Mission = () => {
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <Image
-                  src="/images/donation.png"
+                  src="/home/Donation.png"
                   alt="Donation"
                   width={50}
                   height={50}
@@ -39,7 +39,7 @@ const Mission = () => {
               </div>
               <div className="flex items-start space-x-4">
                 <Image
-                  src="/images/donation.png"
+                  src="/home/Volunteering.png"
                   alt="Volunteering"
                   width={50}
                   height={50}
@@ -58,7 +58,7 @@ const Mission = () => {
               </div>
               <div className="flex items-start space-x-4">
                 <Image
-                  src="/images/donation.png"
+                  src="/home/CSR.png"
                   alt="CSR"
                   width={50}
                   height={50}

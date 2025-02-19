@@ -41,7 +41,7 @@ const HomeAbout = () => {
             </div>
 
             {/* Third Row - Single Full Image */}
-            <div className="relative h-40 md:h-56 group-hover:bg-gray-100 group-hover:shadow-lg group-hover:border-l-4 group-hover:border-red-600 transition-all duration-300">
+            <div className="relative h-40 md:h-56 ">
               <Image
                 src="/home/hero5.png"
                 alt="Smiling group of children"
@@ -53,7 +53,7 @@ const HomeAbout = () => {
           </div>
 
           <div className=" flex flex-col justify-center px-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-red-600 mb-6">
               About Us
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">

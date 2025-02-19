@@ -27,15 +27,12 @@ const CharityCard = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-5xl font-bold text-center text-green-700">
-          Helping Each Other Can Make{" "}
-          <span className="text-red-500">World Better</span>
+        <h1 className="flex flex-col text-3xl md:text-4xl font-bold text-center text-black">
+          <div>
+            Our Latest <span className="text-red-500 ">News</span> & Articles
+          </div>
+          <span className="text-black mt-2">You Like</span>
         </h1>
-        <p className="text-center mt-4 text-gray-600">
-          Volunteering Offers Opportunities To Develop New Skills And Gain
-          Valuable Experience. This can include Leadership, Communication,
-          Project.
-        </p>
 
         <div className=" flex flex-col md:flex-row items-center justify-center gap-12 mt-12">
           {articles.map((article, index) => (

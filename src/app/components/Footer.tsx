@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -7,14 +8,15 @@ const Footer = () => {
     <>
       <footer className="bg-gray-100 text-gray-800 py-8">
         <div className="container mx-auto px-6 sm:px-10 flex flex-col lg:flex-row justify-between items-center gap-8">
-          {/* Jaago Manav Section */}
+          {/* Jaago Manav Section with Image */}
           <div className="flex flex-col items-center lg:items-start flex-1">
-            <h1 className="text-red-600 text-xl sm:text-2xl font-bold">
-              Jaago Manav
-            </h1>
-            <p className="text-center lg:text-left text-sm mt-2 italic">
-              Awakening Humanity.....
-            </p>
+            <Image
+              src="/about/logo.png" // Replace with actual image path
+              alt="Jaago Manav"
+              width={250}
+              height={150}
+              priority
+            />
           </div>
 
           {/* The Dayton Foundation Section */}
