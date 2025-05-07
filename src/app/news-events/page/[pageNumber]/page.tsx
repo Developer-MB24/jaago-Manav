@@ -254,7 +254,7 @@ const allPagesData: Record<
         title:
           "Beyond the Finish Line: Running for Nanhi Kali’s Cause at TMM 2024",
         description:
-          "The Tata Mumbai Marathon on January 21, 2024, witnessed a remarkable display of unity and purpose. Over 150 marathoners from Project Nanhi Kali and Mahindra Group, with the",
+          "The Tata Mumbai Marathonn on January 21, 2024, witnessed a remarkable display of unity and purpose. Over 150 marathoners from Project Nanhi Kali and Mahindra Group, with the",
         image: "/home/hero4.png",
         likes: 28,
       },
