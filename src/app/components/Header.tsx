@@ -1,24 +1,25 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMediaOpen, setIsMediaOpen] = useState(false);
+  const [isDesktopMediaOpen, setIsDesktopMediaOpen] = useState(false);
+  const [isMobileMediaOpen, setIsMobileMediaOpen] = useState(false);
   const mediaRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleMedia = () => setIsMediaOpen((prev) => !prev);
 
-  // Close dropdown when clicking outside
+  // Close desktop media dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         mediaRef.current &&
         !mediaRef.current.contains(event.target as Node)
       ) {
-        setIsMediaOpen(false);
+        setIsDesktopMediaOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -48,10 +49,10 @@ const Header = () => {
             About
           </Link>
 
-          {/* Media Dropdown (click-based) */}
+          {/* Desktop Media Dropdown */}
           <div className="relative" ref={mediaRef}>
             <button
-              onClick={toggleMedia}
+              onClick={() => setIsDesktopMediaOpen((prev) => !prev)}
               className="flex items-center cursor-pointer hover:text-red-600"
             >
               <span>Media</span>
@@ -70,15 +71,14 @@ const Header = () => {
               </svg>
             </button>
 
-            {isMediaOpen && (
+            {isDesktopMediaOpen && (
               <div className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg rounded text-sm z-50">
                 <Link
-                  href="/news-events"
+                  href="/newsevents"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   News & Events
                 </Link>
-
                 <Link
                   href="/newsletters"
                   className="block px-4 py-2 hover:bg-gray-100"
@@ -118,7 +118,7 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
@@ -170,46 +170,84 @@ const Header = () => {
             About
           </Link>
 
-          {/* Media submenu (mobile) */}
+          {/* Mobile Media Dropdown */}
           <div className="flex flex-col items-center">
-            <span className="text-black">Media</span>
-            <div className="flex flex-col pl-4 text-base space-y-1">
-              <Link
-                href="/news-events"
-                className="hover:text-red-600"
-                onClick={toggleMenu}
+            <button
+              onClick={() => setIsMobileMediaOpen((prev) => !prev)}
+              className="text-black flex items-center gap-1"
+            >
+              <span>Media</span>
+              <svg
+                className={`w-4 h-4 transition-transform ${
+                  isMobileMediaOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                News & Events
-              </Link>
-              <Link
-                href="/newsletters"
-                className="hover:text-red-600"
-                onClick={toggleMenu}
-              >
-                Newsletters
-              </Link>
-              <Link
-                href="/publications"
-                className="hover:text-red-600"
-                onClick={toggleMenu}
-              >
-                Publications
-              </Link>
-              <Link
-                href="/photo-gallery"
-                className="hover:text-red-600"
-                onClick={toggleMenu}
-              >
-                Photo Gallery
-              </Link>
-              <Link
-                href="/video-gallery"
-                className="hover:text-red-600"
-                onClick={toggleMenu}
-              >
-                Video Gallery
-              </Link>
-            </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {isMobileMediaOpen && (
+              <div className="flex flex-col pl-4 text-base space-y-1 mt-2">
+                <Link
+                  href="/newsevents"
+                  className="text-black hover:text-red-600"
+                  onClick={() => {
+                    toggleMenu();
+                    setIsMobileMediaOpen(false);
+                  }}
+                >
+                  News & Events
+                </Link>
+                <Link
+                  href="/newsletters"
+                  className="text-black hover:text-red-600"
+                  onClick={() => {
+                    toggleMenu();
+                    setIsMobileMediaOpen(false);
+                  }}
+                >
+                  Newsletters
+                </Link>
+                <Link
+                  href="/publications"
+                  className="text-black hover:text-red-600"
+                  onClick={() => {
+                    toggleMenu();
+                    setIsMobileMediaOpen(false);
+                  }}
+                >
+                  Publications
+                </Link>
+                <Link
+                  href="/photo-gallery"
+                  className="text-black hover:text-red-600"
+                  onClick={() => {
+                    toggleMenu();
+                    setIsMobileMediaOpen(false);
+                  }}
+                >
+                  Photo Gallery
+                </Link>
+                <Link
+                  href="/video-gallery"
+                  className="text-black hover:text-red-600"
+                  onClick={() => {
+                    toggleMenu();
+                    setIsMobileMediaOpen(false);
+                  }}
+                >
+                  Video Gallery
+                </Link>
+              </div>
+            )}
           </div>
 
           <Link
