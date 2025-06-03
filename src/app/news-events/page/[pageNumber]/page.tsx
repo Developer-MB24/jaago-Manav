@@ -188,7 +188,7 @@ const allPagesData: Record<
         title:
           "Beyond the Finish Line: Running for Nanhi Kali’s Cause at TMM 2024",
         description:
-          "The Tata Mumbai Marathon on January 21, 2024, witnessed a remarkable display of unity and purpose. Over 150 marathoners from Project Nanhi Kali and Mahindra Group, with the",
+          "The Tata Mumbai Marathonn on January 21, 2024, witnessed a remarkable display of unity and purpose. Over 150 marathoners from Project Nanhi Kali and Mahindra Group, with the",
         image: "/home/hero4.png",
         likes: 28,
       },
@@ -279,6 +279,14 @@ const NewsEventsPage = ({ params }: { params: { pageNumber?: string } }) => {
   const totalPages = Object.keys(allPagesData).length;
   const currentPage = parseInt(pageNumber);
 
+  const navItems = [
+    { label: "News & Events", href: "/news-events" },
+    { label: "Newsletters", href: "/newsletters" },
+    { label: "Publications", href: "/publications" },
+    { label: "Photo Gallery", href: "/photo-gallery" },
+    { label: "Video Gallery", href: "/video-gallery" },
+  ];
+
   return (
     <>
       <Header />
@@ -361,7 +369,7 @@ const NewsEventsPage = ({ params }: { params: { pageNumber?: string } }) => {
                       page === 1 ? "/news-events" : `/news-events/page/${page}`
                     }
                     className={`w-8 h-8 flex items-center justify-center rounded border border-gray-500 text-sm ${
-                      page.toString() === params.pageNumber
+                      page.toString() === (params.pageNumber ?? "1")
                         ? "bg-orange-400 text-white font-semibold"
                         : "bg-white text-black hover:bg-orange-100"
                     }`}
@@ -385,40 +393,25 @@ const NewsEventsPage = ({ params }: { params: { pageNumber?: string } }) => {
           <aside className="w-full lg:w-1/4 lg:pl-6 border-l border-gray-300">
             <h2 className="text-xl font-semibold mb-4 border-b pb-2">MEDIA</h2>
             <ul className="space-y-3 text-sm font-medium">
-              <li className="border-b pb-2">
-                {pathname === "/news-events" ? (
-                  <span className="text-red-600 mr-2">▣ News & Events</span>
-                ) : (
-                  <Link href="/news-events" prefetch={false}>
-                    <span className="text-red-600 mr-2">▣</span>
-                    News & Events
-                  </Link>
-                )}
-              </li>
-              <li className="border-b pb-2">
-                <Link href="/newsletters">
-                  <span className="text-red-600 mr-2">▣</span>
-                  Newsletters
-                </Link>
-              </li>
-              <li className="border-b pb-2">
-                <Link href="/publications">
-                  <span className="text-red-600 mr-2">▣</span>
-                  Publications
-                </Link>
-              </li>
-              <li className="border-b pb-2">
-                <Link href="/photo-gallery">
-                  <span className="text-red-600 mr-2">▣</span>
-                  Photo Gallery
-                </Link>
-              </li>
-              <li className="border-b pb-2">
-                <Link href="/video-gallery">
-                  <span className="text-red-600 mr-2">▣</span>
-                  Video Gallery
-                </Link>
-              </li>
+              {navItems.map((item, index) => {
+                const isActive = pathname.startsWith(item.href);
+
+                return (
+                  <li key={index} className="border-b pb-2">
+                    <Link
+                      href={item.href}
+                      className={`flex items-center gap-2 ${
+                        isActive
+                          ? "text-red-600 font-semibold"
+                          : "text-black hover:text-red-600"
+                      }`}
+                    >
+                      <span className="text-red-600">▣</span>
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </aside>
         </section>

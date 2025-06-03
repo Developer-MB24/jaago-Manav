@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const Introduction = () => {
@@ -62,13 +63,17 @@ const Introduction = () => {
             {images.map((src, index) => (
               <div
                 key={index}
-                className="group p-4 rounded-lg text-center h-auto flex flex-col justify-center items-center transition duration-300"
+                className="group p-4 rounded-lg text-center h-auto flex flex-col justify-center items-center transition duration-300 hover:bg-gray-100 hover:border-l-4 hover:border-red-600 hover:shadow-lg"
               >
-                <img
-                  src={src}
-                  alt={`Vision ${index + 1}`}
-                  className="h-16 mb-4"
-                />
+                <div className="relative h-16 w-16 mb-4">
+                  <Image
+                    src={src}
+                    alt={`Vision ${index + 1}`}
+                    fill
+                    className="object-contain"
+                    sizes="64px"
+                  />
+                </div>
                 <h3 className="text-black text-xl sm:text-2xl font-bold">
                   {index % 2 === 0 ? "Vision" : "Mission"}
                 </h3>
@@ -76,14 +81,6 @@ const Introduction = () => {
                   Lorem ipsum odor amet, consectetur adipiscing elit. Platea
                   mollis elementum risus placerat; felis egestas.
                 </p>
-                {/* Hover Styles */}
-                <style jsx>{`
-                  .group:hover {
-                    background-color: #f8f9fa;
-                    border-left: 4px solid #dc2626;
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                  }
-                `}</style>
               </div>
             ))}
           </div>

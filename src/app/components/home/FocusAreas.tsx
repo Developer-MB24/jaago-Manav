@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 const focusAreas = [
   {
@@ -99,77 +100,41 @@ const FocusAreas = () => {
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {/* First Slide */}
-          <div className="w-full flex-shrink-0 flex justify-center space-x-6">
-            {focusAreas.slice(0, 3).map((area, index) => (
-              <div
-                key={index}
-                className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
-              >
-                <div className="mb-2 flex ">
-                  <img
-                    src={area.iconImage}
-                    alt={area.title}
-                    className="w-16 h-16"
-                  />
-                </div>
-                <h3 className="text-xl font-bold italic mb-1">{area.title}</h3>
-                <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
-                <p className="text-gray-700 mb-4">{area.description}</p>
-                <button className="bg-green-700 text-white py-2 px-4 rounded-full font-bold hover:bg-green-800">
-                  {area.buttonText}
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* Second Slide */}
-          <div className="w-full flex-shrink-0 flex justify-center space-x-6">
-            {focusAreas.slice(3, 6).map((area, index) => (
-              <div
-                key={index}
-                className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
-              >
-                <div className="mb-2 flex justify-center">
-                  <img
-                    src={area.iconImage}
-                    alt={area.title}
-                    className="w-16 h-16"
-                  />
-                </div>
-                <h3 className="text-xl font-bold italic mb-1">{area.title}</h3>
-                <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
-                <p className="text-gray-700 mb-4">{area.description}</p>
-                <button className="bg-green-700 text-white py-2 px-4 rounded-full font-bold hover:bg-green-800">
-                  {area.buttonText}
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* Third Slide */}
-          <div className="w-full flex-shrink-0 flex justify-center space-x-6">
-            {focusAreas.slice(6, 9).map((area, index) => (
-              <div
-                key={index}
-                className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
-              >
-                <div className="mb-2 flex justify-center">
-                  <img
-                    src={area.iconImage}
-                    alt={area.title}
-                    className="w-16 h-16"
-                  />
-                </div>
-                <h3 className="text-xl font-bold italic mb-1">{area.title}</h3>
-                <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
-                <p className="text-gray-700 mb-4">{area.description}</p>
-                <button className="bg-green-700 text-white py-2 px-4 rounded-full font-bold hover:bg-green-800">
-                  {area.buttonText}
-                </button>
-              </div>
-            ))}
-          </div>
+          {[0, 3, 6].map((startIndex, slideIndex) => (
+            <div
+              key={slideIndex}
+              className="w-full flex-shrink-0 flex justify-center space-x-6"
+            >
+              {focusAreas
+                .slice(startIndex, startIndex + 3)
+                .map((area, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-200 p-6 rounded-lg shadow-md text-left w-96 mx-2 flex-shrink-0"
+                  >
+                    <div className="mb-2 flex justify-center">
+                      <div className="relative w-16 h-16">
+                        <Image
+                          src={area.iconImage}
+                          alt={area.title}
+                          fill
+                          className="object-contain"
+                          sizes="64px"
+                        />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold italic mb-1">
+                      {area.title}
+                    </h3>
+                    <h4 className="text-lg font-bold mb-2">{area.subtitle}</h4>
+                    <p className="text-gray-700 mb-4">{area.description}</p>
+                    <button className="bg-green-700 text-white py-2 px-4 rounded-full font-bold hover:bg-green-800">
+                      {area.buttonText}
+                    </button>
+                  </div>
+                ))}
+            </div>
+          ))}
         </div>
 
         {/* Slider Indicators */}

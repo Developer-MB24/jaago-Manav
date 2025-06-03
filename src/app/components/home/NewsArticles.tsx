@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 const CharityCard = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -34,31 +35,35 @@ const CharityCard = () => {
           <span className="text-black mt-2">You Like</span>
         </h1>
 
-        <div className=" flex flex-col md:flex-row items-center justify-center gap-12 mt-12">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 mt-12">
           {articles.map((article, index) => (
             <div
               key={article.id}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
-              className={`w-80 p-6  rounded-[2rem]  shadow-lg text-center transition-transform transform hover:scale-105 cursor-pointer ${
+              className={`w-80 p-6 rounded-[2rem] shadow-lg text-center transition-transform transform hover:scale-105 cursor-pointer ${
                 hoveredCard === index
                   ? "bg-green-700 text-white"
                   : "bg-gray-200 text-black"
               }`}
             >
               <h3 className="text-lg font-bold mt-10 mb-4">{article.title}</h3>
-              <img
-                src={article.image}
-                alt="Article"
-                className="w-full h-48 object-cover rounded-md"
-              />
-              {/* <span className="block mt-4 text-sm font-semibold bg-gray-200 px-2 py-1 rounded">
-                {article.category}
-              </span> */}
-
+              <div className="relative w-full h-48 mb-4">
+                <Image
+                  src={article.image}
+                  alt="Article"
+                  fill
+                  className="object-cover rounded-md"
+                  sizes="(max-width: 768px) 90vw, 320px"
+                />
+              </div>
               <a
                 href="#"
-                className="text-red-500 font-semibold mt-4 mb-10 inline-block hover:text-white"
+                className={`font-semibold mt-4 mb-10 inline-block ${
+                  hoveredCard === index
+                    ? "text-white hover:text-gray-200"
+                    : "text-red-500 hover:text-black"
+                }`}
               >
                 Read more ➡
               </a>

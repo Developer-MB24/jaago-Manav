@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const CharityCard = () => {
   return (
@@ -20,10 +21,11 @@ const CharityCard = () => {
           <div className="text-center md:text-left max-w-xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-4 bg-red-100 rounded-full">
-                <img
+                <Image
                   src="/home/helping.png"
                   alt="Start Helping"
-                  className="w-8 h-8"
+                  width={32}
+                  height={32}
                 />
               </div>
               <div>
@@ -35,12 +37,14 @@ const CharityCard = () => {
                 </p>
               </div>
             </div>
+
             <div className="flex items-center gap-4">
               <div className="p-4 bg-red-100 rounded-full">
-                <img
+                <Image
                   src="/home/charity.png"
                   alt="Make Donations"
-                  className="w-8 h-8"
+                  width={32}
+                  height={32}
                 />
               </div>
               <div>
@@ -52,30 +56,33 @@ const CharityCard = () => {
                 </p>
               </div>
             </div>
+
             {/* Footer Highlights */}
-            <div className="mt-12 ">
-              <p className="text-black flex items-center  gap-2">
+            <div className="mt-12">
+              <p className="text-black flex items-center gap-2">
                 <span className="text-2xl">
-                  <div className="p-4  rounded-full">
-                    <img
+                  <div className="p-4 rounded-full">
+                    <Image
                       src="/home/tick.png"
-                      alt="Make Donations"
-                      className="w-8 h-8"
+                      alt="Check"
+                      width={32}
+                      height={32}
                     />
                   </div>
-                </span>{" "}
+                </span>
                 Helped Fund 3265 Project Powerful
               </p>
-              <p className="text-black flex items-center  gap-2 mt-4">
+              <p className="text-black flex items-center gap-2 mt-4">
                 <span className="text-2xl">
-                  <div className="p-4  rounded-full">
-                    <img
+                  <div className="p-4 rounded-full">
+                    <Image
                       src="/home/tick.png"
-                      alt="Make Donations"
-                      className="w-8 h-8"
+                      alt="Check"
+                      width={32}
+                      height={32}
                     />
                   </div>
-                </span>{" "}
+                </span>
                 We give Child a gift of a Education
               </p>
             </div>
@@ -86,12 +93,16 @@ const CharityCard = () => {
             <div className="absolute top-4 left-4">
               <span className="text-red-500 text-4xl">★</span>
             </div>
-            <div className="bg-[#035100] rounded-tr-3xl overflow-hidden">
-              <img
-                src="/home/image14.png"
-                alt="Child"
-                className="w-36 h-36 rounded-full mx-auto object-cover border-4 border-white mt-4"
-              />
+            <div className="bg-[#035100] rounded-tr-3xl overflow-hidden pt-4 pb-2">
+              <div className="relative w-36 h-36 mx-auto">
+                <Image
+                  src="/home/image14.png"
+                  alt="Child"
+                  fill
+                  className="rounded-full object-cover border-4 border-white"
+                  sizes="144px"
+                />
+              </div>
             </div>
             <div className="mt-4">
               <h2 className="text-[#035100] text-3xl font-bold">58921</h2>
