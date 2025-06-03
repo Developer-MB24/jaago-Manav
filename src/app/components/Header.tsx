@@ -73,7 +73,7 @@ const Header = () => {
             {isMediaOpen && (
               <div className="absolute top-full left-0 mt-1 w-52 bg-white shadow-lg rounded text-sm z-50">
                 <Link
-                  href="/news-events/page/1"
+                  href="/news-events"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   News & Events
